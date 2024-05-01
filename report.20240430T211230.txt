@@ -1,0 +1,14 @@
+This is a system Validation at 21:12:30 on 2024-04-30
+
+Unreachable systems:
+----------------------------------------------
+
+Hosts who have been up longer than a day:
+----------------------------------------------
+ jlfed1 - has not rebooted today
+ raspberrypi - has not rebooted today
+ jlrocky1 - has not rebooted today
+ u22jl - has not rebooted today
+ jlredhat1 - has not rebooted today
+ jlredhat88 - has not rebooted today
+ jlu22 - has not rebooted today
