@@ -1,0 +1,12 @@
+---
+- name: Start of jinja2 template push
+  hosts: webservers
+  vars:
+  gather_facts: True
+  become: False
+  tasks: 
+
+    - name: Copy template to all hosts
+      template:
+        src: /home/ansible/playbooks/template.j2
+        dest: "/home/ansible/template.txt"

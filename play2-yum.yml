@@ -1,0 +1,10 @@
+---
+- name: Update all servers
+  hosts: redhat
+  become: true  # Run tasks with sudo
+
+  tasks:
+    - name: Update all packages
+      yum:
+        name: '*'
+        state: latest
