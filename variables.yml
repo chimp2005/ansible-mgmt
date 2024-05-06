@@ -1,0 +1,18 @@
+--- 
+
+- name: Variable output
+  hosts: localhost
+  vars: 
+  vars_files:
+    - vault.yaml
+  gather_facts: True
+  become: False
+  tasks:
+
+    - name: Debug Variables
+      debug:
+        msg: "{{ item }} is in variable list"
+      with_items:
+        - "{{ username }}"
+        - "{{ password }}"
+

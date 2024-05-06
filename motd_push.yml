@@ -1,0 +1,24 @@
+---
+
+- name: Push MOTD 
+  hosts: servers
+  vars:
+  gather_facts: True
+  become: True
+  tasks:
+
+  - name: Debug dev variables 
+    ansible.builtin.debug:
+      var: env
+
+  - name: Push over the file if prod 
+    ansible.builtin.copy:
+      src: /home/ansible/prod_motd
+      dest: "/etc/motd"
+    when: '"prod" in env'
+
+  - name: Push over the file if dev 
+    ansible.builtin.copy:
+      src: /home/ansible/dev_motd
+      dest: "/etc/motd"
+    when: '"dev" in env'
