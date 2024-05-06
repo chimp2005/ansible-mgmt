@@ -1,15 +1,15 @@
 [testing]
-jlfed1
+jlfed1 env=dev
 raspberrypi
 jlrocky1
 u22jl
-jlredhat1
+jlredhat1 env=dev
 jlredhat88
-jlu22
+jlu22 env=prod
 
 [ubuntu]
 u22jl
-raspberrypi
+raspberrypi env=prod
 
 [redhat]
 jlfed1
@@ -21,3 +21,8 @@ jlredhat88
 jlrocky1
 jlredhat88
 raspberrypi
+
+[motd]
+jlfed1 env=dev
+jlredhat1 env=dev
+jlredhat88 env=prod

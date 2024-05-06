@@ -1,7 +1,7 @@
 ---
 
 - name: Push MOTD 
-  hosts: servers
+  hosts: motd 
   vars:
   gather_facts: True
   become: True
@@ -13,12 +13,12 @@
 
   - name: Push over the file if prod 
     ansible.builtin.copy:
-      src: /home/ansible/prod_motd
+      src: /home/ansible/playbooks/prod_motd
       dest: "/etc/motd"
     when: '"prod" in env'
 
   - name: Push over the file if dev 
     ansible.builtin.copy:
-      src: /home/ansible/dev_motd
+      src: /home/ansible/playbooks/dev_motd
       dest: "/etc/motd"
     when: '"dev" in env'
