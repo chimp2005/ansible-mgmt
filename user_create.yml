@@ -1,0 +1,26 @@
+---
+
+- name: User push to environment servers
+  hosts: motd
+  vars:
+  gather_facts: True
+  become: True
+  tasks:
+
+  - name: Debug env 
+    debug:
+      var: env
+
+  - name: Create the prod engineer
+    user:
+      name: prod_engineer
+      comment: Prod Engineer
+    when: '"prod" in env'
+
+  - name: Create the dev engineer
+    user:
+      name: dev_engineer
+      comment: Dev Engineer
+      groups: wheel 
+    when: '"dev" in env'
+

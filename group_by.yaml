@@ -1,0 +1,26 @@
+---
+
+- name: System Facts and group by those facts
+  hosts: testing
+  vars:
+  gather_facts: True 
+  become: True 
+  tasks:
+
+    - name: "Show groups active in the playbook at start"
+      debug:
+        msg: "{{ group_names }}"
+
+    - name: Setting groups for reboot group
+      group_by:
+        key: "{{ ansible_local.patching.patch_group }}"
+      failed_when: false
+
+    - name: Checking Rebooting flag
+      group_by:
+        key: Rebooting
+      when: '"true" in ansible_local.patching.Rebooting'
+
+    - name: "Show Groups active in this playbook at the end"
+      debug:
+        msg: "{{ group_names }}"
