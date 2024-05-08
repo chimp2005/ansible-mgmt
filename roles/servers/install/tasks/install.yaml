@@ -1,0 +1,19 @@
+  - name: Debug env variables just to see them
+    debug:
+      var: app
+
+  - name: Install apache2 on the web server
+    dnf:
+      pkg:
+      - httpd
+      - php
+      state: present
+    when: '"web" in app'
+
+  - name: Install mariadb on the web server
+    dnf:
+      pkg:
+      - mariadb-server
+      - mariadb
+      state: present
+    when: '"db" in app'

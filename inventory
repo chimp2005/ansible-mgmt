@@ -26,3 +26,7 @@ raspberrypi
 jlfed1 env=dev
 jlredhat1 env=dev
 jlredhat88 env=prod
+
+[servers2]
+jlrocky1 env=pod app=db
+jlredhat1 env=dev app=web
