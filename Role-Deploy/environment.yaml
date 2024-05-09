@@ -1,0 +1,8 @@
+- hosts: servers2
+  gather_facts: true
+  vars: 
+  tasks:
+
+  roles:
+  - update
+  - install
